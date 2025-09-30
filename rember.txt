@@ -1,0 +1,24 @@
+// todo
+--------------------------
+auth
+
+message displayer personnalisé pour les filtres
+
+Bookpage storeed book useless, to change 
+(maybe store the best rated too)
+
+ userId: req.auth.userId, NON! un dernier check puis NON
+
+book best rated target blank disconnect user
+
+password regex display
+
+stars calc linear
+
+img placeholder if no image available
+
+UploadBookPage: Delete image from CDN if multiple drag&drop on input file
+
+faille cdn via JS
+
+
