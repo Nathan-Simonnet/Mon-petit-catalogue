@@ -1,6 +1,6 @@
 
 # Étape 1 : Utiliser une image de base Node.js
-FROM node:18 AS build-stage
+FROM node:20-alpine AS build
 # FROM node:18 AS build-stage
 
 # Étape 2 : Définir le répertoire de travail
