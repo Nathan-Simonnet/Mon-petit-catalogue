@@ -1,24 +1,92 @@
 // todo
 --------------------------
-auth
 
-message displayer personnalisé pour les filtres
+book best rated target blank disconnect user
+
+Validation avant notation (au lieu d'un clique pour envoyer la requête)
 
 Bookpage storeed book useless, to change 
 (maybe store the best rated too)
 
- userId: req.auth.userId, NON! un dernier check puis NON
-
-book best rated target blank disconnect user
-
-password regex display
-
 stars calc linear
-
-img placeholder if no image available
 
 UploadBookPage: Delete image from CDN if multiple drag&drop on input file
 
+
+img placeholder if no image available
+
 faille cdn via JS
 
+// Communautée / moderation / doublons isbn
+----------------------------------------------------
+
+Solutions possibles
+
+Modération automatique (filtrage)
+
+Filtrage des mots-clés offensants (listes de mots interdits).
+
+Limiter certaines actions : nombre de livres ajoutés par jour, vérification CAPTCHA, limitation des votes multiples.
+
+Modération communautaire
+
+Permettre aux utilisateurs de signaler un contenu problématique.
+
+Les contenus signalés passent en “attente de validation” par le libraire ou l’administrateur.
+
+Roles utilisateurs
+
+Admin / Moderateur : peut supprimer ou valider les livres/avis.
+
+Utilisateur : peut ajouter des livres ou noter, mais signalement possible.
+
+mongo :*
+// Exemple : signaler un livre
+app.post('/books/:id/report', async (req, res) => {
+  const book = await Book.findById(req.params.id);
+  book.reported = true; // flag pour modération
+  await book.save();
+  res.json({ message: "Le livre a été signalé et sera vérifié." });
+});
+
+// Liste des livres à modérer (admin)
+app.get('/admin/reported-books', async (req, res) => {
+  const books = await Book.find({ reported: true });
+  res.json(books);
+});
+
+*
+
+
+. Problème de filtrage et fiabilité des notes
+Théorie
+
+Les utilisateurs peuvent noter de façon injustifiée ou spammer les notes.
+
+Le but est de garantir que les évaluations reflètent réellement la qualité ou l’intérêt du livre.
+
+Solutions
+
+Limitation des votes
+
+Un utilisateur ne peut noter un livre qu’une seule fois.
+
+Si l’utilisateur change d’avis, son vote est mis à jour, pas ajouté.
+
+Notation pondérée
+
+On peut introduire un score de confiance : notes d’utilisateurs actifs ou validés comptent plus.
+
+Filtrage automatique de spam
+
+Détecter des notes très fréquentes d’un même compte ou d’adresses IP suspectes.
+
+
+4. Bonnes pratiques côté Vue.js / frontend
+
+Indiquer à l’utilisateur quand un livre existe déjà pour éviter l’impression qu’il doit réinventer la roue.
+
+Afficher les notes globales et les dernières notes ajoutées pour encourager la participation et la transparence.
+
+Mettre en place un système de signalement clair et simple pour les utilisateurs.
 

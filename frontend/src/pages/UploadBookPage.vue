@@ -26,9 +26,9 @@
           <!-- <label for="input-genre">Genre</label>
           <input type="text" aria-label="Genre" id="input-genre" maxlength="40" v-model="genreModel" required> -->
 
-          <label for="genre-livre">Genre du livre :</label>
+          <label for="genre-livre">Genre du livre</label>
           <select id="genre-livre" name="genre-livre" v-model="selectedGenre" required>
-            <option value="">-- Sélectionnez un genre --</option>
+            <option value="">-- Sélectionnez 1 à 3 genre --</option>
             <option value="Roman">Roman</option>
             <option value="Fantasy">Fantasy</option>
             <option value="Aventure">Aventure</option>

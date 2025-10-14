@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import mongoose from "mongoose";
 // const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
