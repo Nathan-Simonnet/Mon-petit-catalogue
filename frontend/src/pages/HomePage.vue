@@ -282,6 +282,10 @@ onUnmounted(() => {
 </script>
 <!----------------------------------- Style ------------------------------------>
 <style scoped>
+
+h1{
+   border: 4px solid red;
+}
 @keyframes pulse-scale {
   0% {
     transform: scale(1);
