@@ -1,7 +1,7 @@
 // todo
 --------------------------
 
-book best rated target blank disconnect user
+book best rated target blank disconnect user (localstorage ou cookie httponly)
 
 Validation avant notation (au lieu d'un clique pour envoyer la requête)
 

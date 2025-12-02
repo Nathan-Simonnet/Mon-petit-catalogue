@@ -20,7 +20,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URI=${MONGO_URL}
+      - MONGO_URL=${MONGO_URL}
       - RANDOM_SECRET_TOKEN=${RANDOM_SECRET_TOKEN}
       - NODE_ENV=${NODE_ENV}
       - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}

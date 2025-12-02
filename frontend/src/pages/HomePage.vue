@@ -82,7 +82,7 @@
         <Loader :isLoading="otherBookLoading" />
       </div>
       <div v-if="messageDisplay" class="message-display" @click="messageDisplay = ''"><span>{{ messageDisplay
-      }}</span></div>
+          }}</span></div>
     </div>
   </main>
   <span class="IntersectionObserver-beacon" id="fetchMoreBooks-beacon" ref="fetchMoreBooksBeacon"></span>
@@ -272,7 +272,7 @@ onMounted(() => {
   }
   console.log(userBookList.value.length)
   console.log(import.meta.env.VITE_API_URL)
- })
+})
 
 onUnmounted(() => {
   observer?.disconnect();
@@ -282,25 +282,28 @@ onUnmounted(() => {
 </script>
 <!----------------------------------- Style ------------------------------------>
 <style scoped>
-
 @keyframes pulse-scale {
   0% {
     transform: scale(1);
     box-shadow: 0 0 5px rgba(216, 168, 99, 0.3);
   }
+
   50% {
     transform: scale(1.15);
     box-shadow: 0 0 20px rgba(216, 168, 99, 0.8);
   }
+
   100% {
     transform: scale(1);
     box-shadow: 0 0 5px rgba(216, 168, 99, 0.3);
   }
 }
+
 main {
   background: url(../assets/white-brown-library.webp) fixed;
 
   .card {
+    border: 4px solid red;
     gap: 20px;
     margin: 80px;
     padding: 40px;
