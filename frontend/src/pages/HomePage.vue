@@ -303,7 +303,7 @@ main {
   background: url(../assets/white-brown-library.webp) fixed;
 
   .card {
-    border: 4px solid red;
+    /* border: 4px solid red; */
     gap: 20px;
     margin: 80px;
     padding: 40px;
